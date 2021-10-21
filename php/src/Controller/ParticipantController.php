@@ -11,7 +11,7 @@ class ParticipantController extends AbstractController
     /**
      * @Route("/api/tournaments/{tournamentId}/participants", name="create_participant", methods={"POST"})
      */
-    public function createTournamen(): Response
+    public function createTournamentParticipant(string $tournamentId, Request $request): Response
     {
         return $this->render('participant/index.html.twig', [
             'controller_name' => 'ParticipantController',
