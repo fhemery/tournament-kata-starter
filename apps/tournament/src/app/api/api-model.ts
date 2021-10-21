@@ -7,7 +7,13 @@ export interface TournamentPhase {
   type: TournamentPhaseType;
 }
 
+export interface ParticipantToAdd {
+  name: string;
+  elo: number;
+}
+
 export interface Participant {
+  id: string,
   name: string;
   elo: number;
 }

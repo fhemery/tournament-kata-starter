@@ -18,8 +18,6 @@ export const postTournament = (req: Request, res: Response) => {
     res.status(400);
     res.send();
   }
-
-
 };
 
 export const getTournament = (req: Request, res: Response) => {
