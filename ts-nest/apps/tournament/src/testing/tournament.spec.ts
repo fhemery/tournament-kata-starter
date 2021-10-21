@@ -3,9 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import { startApp } from './test.utils';
 import * as request from 'supertest';
 
-const exampleTournament = {
-  name: 'Unreal',
-} as TournamentToAdd;
+const exampleTournament = {} as TournamentToAdd;
 
 describe('/tournament endpoint', () => {
   let app: INestApplication;
