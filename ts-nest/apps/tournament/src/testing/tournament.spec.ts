@@ -2,6 +2,7 @@ import {TournamentToAdd} from '../app/api-model';
 import {INestApplication} from '@nestjs/common';
 import {startApp} from './test.utils';
 import * as request from 'supertest';
+import {name_already_used, require_name} from '../app/errors-messages';
 
 const exampleTournament = {
   name: 'Unreal',
@@ -36,5 +37,26 @@ describe('/tournament endpoint', () => {
 
       expect(get.body.name).toEqual(exampleTournament.name);
     });
+
+    it('no name for the tournament', async () => {
+      const {body} = await request(app.getHttpServer())
+        .post('/api/tournaments')
+        .send({})
+        .expect(400);
+
+      expect(body.error).toEqual(require_name);
+    });
+
+    it('Name is already used', async () => {
+
+      const {body} = await request(app.getHttpServer())
+        .post('/api/tournaments')
+        .send(exampleTournament)
+        .expect(400);
+
+      expect(body.error).toEqual(name_already_used);
+    });
+
+
   });
 });
