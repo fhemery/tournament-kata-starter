@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { Tournament } from '../api-model';
+import {Injectable} from '@nestjs/common';
+import {Tournament} from '../api-model';
 
 @Injectable()
 export class TournamentRepositoryService {
@@ -11,5 +11,9 @@ export class TournamentRepositoryService {
 
   public getTournament(tournamentId: string): Tournament {
     return this.tournaments.get(tournamentId);
+  }
+
+  public getTournaments(): Map<string, Tournament> {
+    return this.tournaments
   }
 }

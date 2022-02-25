@@ -5,7 +5,8 @@ import { TournamentRepositoryService } from '../../repositories/tournament-repos
 
 @Controller('tournaments')
 export class TournamentController {
-  constructor(private tournamentRepository: TournamentRepositoryService) {}
+  constructor(private tournamentRepository: TournamentRepositoryService) {
+  }
 
   @Post()
   public createTournament(@Body() tournamentToAdd: TournamentToAdd): {
@@ -19,7 +20,7 @@ export class TournamentController {
     };
     this.tournamentRepository.saveTournament(tournament);
 
-    return { id: tournament.id };
+    return {id: tournament.id};
   }
 
   @Get(':id')

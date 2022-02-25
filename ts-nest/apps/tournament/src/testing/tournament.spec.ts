@@ -1,6 +1,6 @@
-import { TournamentToAdd } from '../app/api-model';
-import { INestApplication } from '@nestjs/common';
-import { startApp } from './test.utils';
+import {TournamentToAdd} from '../app/api-model';
+import {INestApplication} from '@nestjs/common';
+import {startApp} from './test.utils';
 import * as request from 'supertest';
 
 const exampleTournament = {
@@ -16,7 +16,7 @@ describe('/tournament endpoint', () => {
 
   describe('[POST] when creating a tournament', () => {
     it('should return the correct id', async () => {
-      const { body } = await request(app.getHttpServer())
+      const {body} = await request(app.getHttpServer())
         .post('/api/tournaments')
         .send(exampleTournament)
         .expect(201);
@@ -25,7 +25,7 @@ describe('/tournament endpoint', () => {
     });
 
     it('should have stored the tournament', async () => {
-      const { body } = await request(app.getHttpServer())
+      const {body} = await request(app.getHttpServer())
         .post('/api/tournaments')
         .send(exampleTournament)
         .expect(201);
