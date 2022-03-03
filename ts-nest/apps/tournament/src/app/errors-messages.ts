@@ -1,2 +1,2 @@
-export const require_name = 'Name is require'
-export const name_already_used = 'Name is require'
+export const REQUIRE_NAME = 'Name is require'
+export const NAME_ALREADY_USED = 'Name is require'
