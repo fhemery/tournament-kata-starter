@@ -3,7 +3,7 @@ import {INestApplication} from '@nestjs/common';
 import {startApp} from './test.utils';
 import * as request from 'supertest';
 
-import {NAME_ALREADY_USED, REQUIRE_NAME} from '../app/errors-messages';
+import {NAME_ALREADY_USED, REQUIRE_NAME, TOURNAMENT_DOESNT_EXIST} from '../app/exceptions/errors-messages';
 
 
 function generateExampleTournament() {
@@ -67,6 +67,13 @@ describe('/tournament endpoint', () => {
                 .expect(400);
 
             expect(body.error).toEqual(NAME_ALREADY_USED);
+        });
+
+        it('Tournament doesn\'t exist', async () => {
+            const get = await request(app.getHttpServer())
+                .get(`/api/tournaments/0`)
+                .expect(404);
+            expect(get.body.error).toEqual(TOURNAMENT_DOESNT_EXIST);
         });
     });
 });

@@ -18,7 +18,7 @@ export class TournamentController {
         }
         this.tournamentRepository.getTournaments().forEach((value) => {
             if (value.name === tournamentToAdd.name) {
-                throw new BadRequestException(400, NAME_ALREADY_USED);
+                throw generateException(HttpStatus.BAD_REQUEST, NAME_ALREADY_USED);
             }
         })
 
