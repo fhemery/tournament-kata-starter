@@ -1,4 +1,4 @@
-import * as express from 'express';
+import express from 'express';
 import { getTournament, postTournament } from './app/api/tournament-api';
 import * as bodyParser from 'body-parser';
 
