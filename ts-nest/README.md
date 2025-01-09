@@ -1,5 +1,3 @@
-
-
 # Tournament
 
 This project was generated using [Nx](https://nx.dev). It is however using [nest js](https://nestjs.com/)
@@ -15,4 +13,3 @@ Run `npm start` for a dev server. Navigate to http://localhost:3333/api. The app
 ## Running unit tests
 
 Run `npm test` to execute the unit tests via [Jest](https://jestjs.io).
-

@@ -1,7 +1,7 @@
 import { TournamentToAdd } from '../app/api-model';
 import { INestApplication } from '@nestjs/common';
 import { startApp } from './test.utils';
-import * as request from 'supertest';
+import request from 'supertest';
 
 const exampleTournament = {
   name: 'Unreal',
